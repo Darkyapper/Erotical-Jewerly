@@ -10,20 +10,37 @@ if (resolving)
 
     if (found)
     {
+		combo++;
+		
         // 3. Eliminar
-        scr_clear_matches(board, match_grid);
+        var removed = scr_clear_matches(board, match_grid);
+		
+		score += removed * 10 * combo;
+		if (combo > 1)
+		{
+			combo_display = combo;
+			combo_timer = room_speed * 2; // 2 segundos
+		}
+
 
         // 4. Gravedad
         scr_apply_gravity(board);
     }
     else
     {
+		combo = 0; 
         // 5. Ya no hay nada que resolver
         resolving = false;
     }
 
     exit; // ⬅️ CLAVE: no hacer nada más este frame
 }
+
+if (combo_timer > 0)
+{
+    combo_timer--;
+}
+
 
 if (!resolving && (active_gem == noone || !instance_exists(active_gem)))
 {

@@ -64,7 +64,6 @@ if (game_state == GAME_OVER)
     );
 }
 
-
 #region DEBUG
 // DEBUG: marcar matches
 for (var c = 0; c < grid_width; c++)
