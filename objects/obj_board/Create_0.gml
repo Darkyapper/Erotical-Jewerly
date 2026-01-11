@@ -15,6 +15,8 @@ score = 0;
 
 // Combo
 combo = 0;
+combo_timer = 0;
+combo_display = 0;
 
 
 // Tamaño de cada celda (en píxeles)
