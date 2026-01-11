@@ -10,14 +10,19 @@ if (resolving)
 
     if (found)
     {
+		combo++;
+		
         // 3. Eliminar
-        scr_clear_matches(board, match_grid);
+        var removed = scr_clear_matches(board, match_grid);
+		
+		score += removed * 10 * combo;
 
         // 4. Gravedad
         scr_apply_gravity(board);
     }
     else
     {
+		combo = 0; 
         // 5. Ya no hay nada que resolver
         resolving = false;
     }

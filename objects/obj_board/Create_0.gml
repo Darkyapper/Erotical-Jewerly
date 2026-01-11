@@ -10,6 +10,13 @@ grid_height = 13;
 
 resolving = false;
 
+// Score
+score = 0;
+
+// Combo
+combo = 0;
+
+
 // Tamaño de cada celda (en píxeles)
 cell_size = 32;
 

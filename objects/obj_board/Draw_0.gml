@@ -64,6 +64,20 @@ if (game_state == GAME_OVER)
     );
 }
 
+draw_set_color(c_white);
+draw_text(board_x + grid_width * cell_size + 20, board_y, "SCORE");
+draw_text(board_x + grid_width * cell_size + 20, board_y + 20, string(score));
+
+if (combo > 1)
+{
+    draw_set_color(c_yellow);
+    draw_text(
+        board_x + grid_width * cell_size + 20,
+        board_y + 50,
+        "COMBO x" + string(combo)
+    );
+}
+
 
 #region DEBUG
 // DEBUG: marcar matches
